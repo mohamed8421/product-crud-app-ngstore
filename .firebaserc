@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ngstore-ce30f": {
+      "hosting": {
+        "NgStore": [
+          "ngstore-ce30f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ngstore-ce30f"
+  }
+}

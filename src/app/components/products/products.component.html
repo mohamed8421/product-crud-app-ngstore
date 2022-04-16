@@ -1,0 +1,26 @@
+<h1 class="text-center my-5">MY Stock Of Products</h1>
+
+<a routerLink="/create" class="btn btn-secondary float-end mx-5 "> Add New Prodect </a>
+
+<div class="table-container" border="2px">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>TITLE</th>
+                <th>PRICE</th>
+                <th>IMAGE</th>
+            <tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{product.title}}</td>
+                <td>{{product.price}}</td>
+                <td><img style="width: 50px; " [src]="product.image" alt=""> </td>
+                <td><a [routerLink]="['/view', product.id]" class="btn btn-primary">View</a></td>
+                <td><a [routerLink]="['/edit', product.id]" class="btn btn-warning">Edit</a></td>
+                <td><a [routerLink]="['/delet', product.id]" class="btn btn-danger">Delet</a></td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>

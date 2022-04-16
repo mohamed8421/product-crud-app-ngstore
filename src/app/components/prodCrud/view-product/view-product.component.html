@@ -1,0 +1,19 @@
+<h1 class="text-center my-5">Product Details</h1>
+<div class="table-container">
+    <table class="table">
+    <thead>
+        <tr>
+            <th>TITLE</th>
+            <th>PRICE</th>
+            <th>IMAGE</th>
+        <tr>
+    </thead>
+    <tbody>
+        <tr >
+            <td>{{viewProduct.title}}</td>
+            <td>{{viewProduct.price}}</td>
+            <td><img style="width: 200px; " [src]="viewProduct.image" alt=""> </td>
+        </tr>
+    </tbody>
+    </table>
+</div>

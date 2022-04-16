@@ -1,0 +1,35 @@
+<div class="container">
+    <h1 class="my-3">SignUp</h1>
+    <form #f="ngForm" (ngSubmit)="signup(f)">
+        <input #name="ngModel" ngModel name="name" type="text" class="form-control my-3" placeholder="Your Name"
+            required>
+        <div class="alert alert-danger" *ngIf="name.invalid && name.touched">this field is required</div>
+
+        <input #email="ngModel" ngModel name="email" type="email" class="form-control my-3" placeholder="Email" required
+            email>
+        <div class="alert alert-danger" *ngIf="email.touched && email.errors?.['required']">this field is required</div>
+        <div class="alert alert-danger" *ngIf="email.touched && email.errors?.['email']">Your Input is not Email</div>
+
+
+        <input #pass="ngModel" ngModel name="password" type="password" class="form-control my-3" placeholder="password"
+            required minlength="7">
+        <div hight="100" class="alert alert-danger" *ngIf="pass.touched && pass.errors?.['required']">this field is
+            required </div>
+        <div hight="100" class="alert alert-danger" *ngIf="pass.touched && pass.errors?.['minlength']">Your Password Is
+            So Short "minlength is 7 char. </div>
+
+
+        <input #passconf="ngModel" ngModel name="passwordConfirm" type="password" class="form-control my-3"
+            placeholder="Confirm password" required>
+        <div class="alert alert-danger" *ngIf="passconf.invalid && passconf.touched">this field is required</div>
+        <div class="alert alert-danger" *ngIf="passconf.value!==pass.value && passconf.touched">passwords are not equal
+        </div>
+
+        <input #address="ngModel" ngModel name="address" type="text" class="form-control my-3" placeholder="Address"
+            required>
+        <div class="alert alert-danger" *ngIf="address.invalid && address.touched">this field is required</div>
+
+        <button class="btn btn-success my-3 btn-lg" [disabled]="f.invalid ||passconf.value!==pass.value ">Create
+            Account</button>
+    </form>
+</div>

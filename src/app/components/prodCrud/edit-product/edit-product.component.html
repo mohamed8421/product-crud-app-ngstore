@@ -1,0 +1,20 @@
+<div *ngIf="datalouded">
+<div class="container">
+  <h1 class="my-3">Edit Product</h1>
+  <form #f="ngForm" (ngSubmit)="save()">
+    <input #title="ngModel" [(ngModel)]="productInfo.title" ngModel name="title" type="text" class="form-control my-3"
+      placeholder="Your Name" required>
+    <div class="alert alert-danger" *ngIf="title.invalid && title.touched">this field is required</div>
+    <input #price="ngModel" [(ngModel)]="productInfo.price" ngModel name="price" type="text" class="form-control my-3"
+      placeholder="Your Name" required>
+    <div class="alert alert-danger" *ngIf="price.invalid && price.touched">this field is required</div>
+    <input #image="ngModel" [(ngModel)]="productInfo.image" ngModel name="image" type="text" class="form-control my-3"
+      placeholder="Your Name" required>
+    <div class="alert alert-danger" *ngIf="image.invalid && image.touched">this field is required</div>
+
+
+
+    <button class="btn btn-success my-3 btn-lg" [disabled]="f.invalid ">Update</button>
+  </form>
+</div>
+</div>
